@@ -3,3 +3,5 @@
 3 - kjhkjhkjh
 4 - lundi
 5 - mardi
+6 - mercredi
+7 - jeudi
