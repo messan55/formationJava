@@ -82,6 +82,15 @@ public class Program {
 		}
 		
 		
+		int i = -3;
+		int n = (i < 0)? 0 : i;
+		/*int n = 0;
+		if (i < 0)
+			n = 0;
+		else
+			n = i;
+		*/
+		System.out.println("n = " + n);
 		
 		
 		
