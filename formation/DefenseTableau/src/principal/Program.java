@@ -59,6 +59,19 @@ public class Program {
 		matrice3[0] = new double[4];
 		matrice3[1] = new double[]{1.1, 2.2, 3.3};
 		
+		String[][] tabstr = {{"un", "deux"}, {"trois", "quatre"}};
+		String[][] tabstr2 = tabstr;
+		
+		// attention, copyof n'est PAS récursif, ce n'est pas une copie
+		// en profondeur
+		// les lignes ne sont pas copiée, tabstr3 référence les mêmes lignes
+		// que tabStr2
+		String[][] tabstr3 = Arrays.copyOf(tabstr, 2);
+		
+		
+		System.out.println(tabstr2[0][0]);
+		tabstr3[0][0] = "toto";
+		System.out.println(tabstr2[0][0]);
 		
 		
 	}
