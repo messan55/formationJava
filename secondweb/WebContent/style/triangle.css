@@ -1,0 +1,11 @@
+td{
+	font-weight: bolder;
+}
+
+td.cellule{
+	background-color: red;
+}
+
+h2#titrePage{
+	text-decoration: underline;
+}
