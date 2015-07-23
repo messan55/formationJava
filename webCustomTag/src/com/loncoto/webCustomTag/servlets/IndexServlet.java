@@ -35,6 +35,7 @@ public class IndexServlet extends HttpServlet {
 		articles.add(new Article(3, "chaise longue", 35.5, 5.5));
 		
 		request.setAttribute("articles", articles);
+		request.setAttribute("article4", new Article());
 		getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 	}
 
