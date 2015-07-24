@@ -5,19 +5,14 @@
 <struts>
     <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
     <constant name="struts.devMode" value="true"/>
-
+	<constant name="struts.action.extension" value=","/>
  
     <package name="default" namespace="/" extends="struts-default">
 
         <default-action-ref name="index"/>
 
-        <action name="index" class="com.loncoto.webstruts.firstStruts.actions.IndexAction" method="index" >
+        <action name="index" class="com.limpoto.webapps.StrustFormationFormMessan.IndexAction" method="index" >
             <result name="success">/index.jsp</result>
-        </action>
-        
-        <action name="Hello" class="com.loncoto.webstruts.firstStruts.actions.HelloAction" method="Hello" >
-            <result name="success">/bonjour.jsp</result>
-            <result name="error">/erreur.jsp</result>
         </action>
 
     </package>

@@ -9,11 +9,5 @@
 </head>
 <body>
 <h2><s:property value="message" /> </h2>
-
-<s:form action="Hello" method="post">
-	<s:textfield name="nom" label="votre nom" />
-	<s:textfield name="age" label="votre age" />
-	<s:submit/>
-</s:form>
 </body>
 </html>
