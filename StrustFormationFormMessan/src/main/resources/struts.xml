@@ -15,6 +15,18 @@
             <result name="success">/index.jsp</result>
         </action>
 
+		<action name="afficheForm" class="com.limpoto.webapps.StrustFormationFormMessan.actions.FormAction" method="index">
+			<result name="success">/formArticle.jsp</result>
+		</action>
+		
+		<action name="enregistrer" class="com.limpoto.webapps.StrustFormationFormMessan.actions.FormAction" method="enregistrer">
+			<result name="success">/thankyou.jsp</result>
+			<result name="input">/formArticle.jsp</result>
+		</action>
+		
+		<action name="liste" class="com.limpoto.webapps.StrustFormationFormMessan.beans.FormAction" method="liste">
+			<result name="success">/listeArticle.jsp</result>
+		</action>
     </package>
 
     <!-- Add addition packages and configuration here. -->

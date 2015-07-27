@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+    <constant name="struts.devMode" value="true"/>
+	<constant name="struts.action.extension" value=","/>
+    <constant name="struts.enable.SlashesInActionNames" value="true" />
+
+    <package name="default" namespace="/" extends="struts-default">
+
+        <default-action-ref name="liste"/>
+
+        <action name="liste" class="com.limpoto.webapps.Struts2myBlogM.actions.PostAction" method="liste" >
+            <result name="success">/liste.jsp</result>
+        </action>
+        
+        <action name="edit/*" class="com.limpoto.webapps.Struts2myBlogM.actions.PostAction"
+         		method="edit">
+         	<param name="postId">{1}</param>
+         	<result name="success">/edit.jsp</result>
+         	<result name="notfound" type="redirect">/liste</result>
+        </action>
+        
+        <!-- resultat input en cas d'erreur de validation -->
+        <action name="save" class="com.limpoto.webapps.Struts2myBlogM.actions.PostAction"
+         		method="save">
+         	<result name="success" type="redirect">/liste</result>
+         	<result name="input">/edit.jsp</result>
+        </action>
+
+    </package>
+
+    <!-- Add addition packages and configuration here. -->
+</struts>
