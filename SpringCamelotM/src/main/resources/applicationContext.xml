@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+            http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+          http://www.springframework.org/schema/aop 
+            http://www.springframework.org/schema/aop/spring-aop-4.0.xsd"
+			default-autowire="byName">
+			
+	<bean id="quete1" class="com.limpoto.webapps.SpringCamelotM.beans.ChevalierBasic>
+		<constructor-arg index="0" value="compter les pieds"/>
+	</bean>
+	<bean id="quete2" class="com.limpoto.webapps.SpringCamelotM.beans.ChevalierBasic">
+		<constructor-arg index="1" value="courir vite"/>
+	</bean>
+	<bean id="quete3" class="com.limpoto.webapps.SpringCamelotM.beans.ChevalierBasic">
+		<constructor-arg index="2" value="nettoyer les ham"/>
+	</bean>
+	<bean id="jacquot" class="com.limpoto.webapps.SpringCamelotM.beans.ChevalierBasic">
+		<property name="nom" value="jacquot"></property>
+		<property name="quete" value="quete1"></property>
+	</bean>
+	<bean id="charleduham" class="com.limpoto.webapps.SpringCamelotM.beans.ChevalierBasic">
+		<property name="nom" value="jacquot"></property>
+		<property name="quete" value="quete2"></property>
+	</bean>
+	
+</beans>

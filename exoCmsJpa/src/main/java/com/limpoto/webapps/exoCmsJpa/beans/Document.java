@@ -12,7 +12,7 @@ public class Document extends Content {
 	public Document(){this(0, null, null, "", "", "");}
 	public Document(int id, Date dateCreation, Date dateModification, String nom, String titre,
 			String corps) {
-		super(id, dateCreation, nom);
+		super(id, dateCreation, dateModification, nom);
 		this.titre = titre;
 		this.corps = corps;
 	}

@@ -2,10 +2,11 @@ package com.limpoto.webapps.exoCmsJpa.jpa;
 
 import java.util.*;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
+import javax.persistence.*;
+
+import com.limpoto.webapps.exoCmsJpa.beans.Content;
+import com.limpoto.webapps.exoCmsJpa.beans.Document;
+import com.limpoto.webapps.exoCmsJpa.beans.Image;
 
 public class JpaTest {
 
@@ -44,6 +45,10 @@ public class JpaTest {
 		tx.begin();
 		//----------------------------------------------------
 		
+		for (int i = 0; i < 10; i++) {
+//			em.persist(new Image(0, new Date(), new Date(), "nom" + i, "" + i, "" + i));
+//			em.persist(new Document(0, new Date(), new Date(), "content_" + i, "titre" + i, "corps" + i));
+		}
 		//----------------------------------------------------
 		tx.commit();
 		em.close();
