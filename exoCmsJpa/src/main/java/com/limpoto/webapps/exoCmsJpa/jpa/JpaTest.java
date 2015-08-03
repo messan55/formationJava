@@ -7,8 +7,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import com.limpoto.webapps.exoCmsJpa.beans.Message;
-
 public class JpaTest {
 
 	
@@ -45,13 +43,7 @@ public class JpaTest {
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
 		//----------------------------------------------------
-		Scanner input = new Scanner(System.in);
-		System.out.println("titre message ? ");
-		String titre = input.nextLine();
-		System.out.println("corps message ? ");
-		String corps = input.nextLine();
-		Message msg = new Message(0, titre, corps);
-		em.persist(msg);
+		
 		//----------------------------------------------------
 		tx.commit();
 		em.close();
@@ -67,17 +59,6 @@ public class JpaTest {
 		tx.begin();
 		//----------------------------------------------------
 		
-		Scanner input = new Scanner(System.in);
-		System.out.println("identifiant message? ");
-		int id = Integer.parseInt(input.nextLine());
-		Message msg = em.find(Message.class, id);
-		if (msg != null) {
-		    System.out.println(msg.getTitre());
-		    System.out.println(msg.getCorps());
-        }
-        else {
-		    System.out.println("message inconnu...");            
-        }
 		
 		//----------------------------------------------------
 		tx.commit();
