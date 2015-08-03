@@ -6,8 +6,6 @@ import java.util.Date;
 
 import com.limpoto.webapps.Struts2myPostM.beans.Post;
 
-
-
 public class PostDAO {
 	public static final String FIND_ALL_SQL = "select * from `post`";
 	public static final String FIND_BY_ID_SQL = "select * from `post` where `id`=?";
@@ -48,8 +46,10 @@ public class PostDAO {
 		return 0;
 	}
 	
-	
-	
+	public int create(){
+		
+		return 0;
+	}
 	
 	public int save(Post c) {
 		if (c.getId() > 0) {
@@ -58,8 +58,9 @@ public class PostDAO {
 				updateOneStatement.clearParameters();
 				updateOneStatement.setString(1, c.getTitre());
 				updateOneStatement.setString(2, c.getCorps());
-				updateOneStatement.setDate(3, new java.sql.Date(c.getDateCreation().getTime()));
-				updateOneStatement.setInt(4, c.getId());
+				//updateOneStatement.setDate(3, c.getDateCreation().getTime());
+				//updateOneStatement.setDate(3, new java.sql.Date(c.getDateCreation().getTime()));
+				updateOneStatement.setInt(3, c.getId());
 				return updateOneStatement.executeUpdate();
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -79,8 +80,6 @@ public class PostDAO {
 		}
 		return 0;
 	}
-	
-	
 	
 	public Post findByID(int id) {
 		Post c = null;

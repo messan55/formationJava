@@ -16,7 +16,7 @@
 <td><s:property value="titre"/></td>
 <td><s:property value="corps"/></td>
 <td><s:property value="dateCreation"/></td>
-<td><s:a href="edit/%{id}" >edition</s:a></td>
+<td><s:a href="edit/%{id}" >editer</s:a></td>
 </tr>
 </s:iterator>
 </table>

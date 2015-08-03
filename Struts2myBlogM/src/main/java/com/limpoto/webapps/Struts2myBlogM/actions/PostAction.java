@@ -37,10 +37,6 @@ package com.limpoto.webapps.Struts2myBlogM.actions;
 			return posts;
 		}
 
-		public void setPosts(List<Post> post) {
-			this.posts = post;
-		}
-
 		public int getPostId() {
 			return postId;
 		}
@@ -93,12 +89,20 @@ package com.limpoto.webapps.Struts2myBlogM.actions;
 		
 		public String edit() {
 			System.out.println("post id = " + getPostId());
-			Post c = postDAO.findByID(getPostId());
-			if (c == null)
+			Post p = postDAO.findByID(getPostId());
+			if (p == null)
 				return "notfound";
-			setPostTitre(c.getTitre());
-			setPostCorps(c.getCorps());
-			setPostDate(c.getDateCreation());
+			setPostTitre(p.getTitre());
+			setPostCorps(p.getCorps());
+			setPostDate(p.getDateCreation());
+			return SUCCESS;
+		}
+		
+		public String create(){
+			setPostId(0);
+			setPostTitre("nouveau post");
+			setPostCorps("a premplir");
+			setPostDate(null);
 			return SUCCESS;
 		}
 		

@@ -8,6 +8,18 @@
 	<constant name="struts.action.extension" value=","/>
     <constant name="struts.enable.SlashesInActionNames" value="true" />
 
+	<package name="default" namespace="/" extends="struts-default">
+
+    	<interceptors>
+    		<interceptor name="daoInterceptor" class="com.loncoto.webapps.BlogDuFutur.utils.DAOInterceptor" />
+  			<interceptor-stack name="myInterceptorStack">
+  				<interceptor-ref name="daoInterceptor" />
+  				<interceptor-ref name="defaultStack" />  		
+    		</interceptor-stack>
+    	</interceptors>
+    
+    <default-interceptor-ref name="myInterceptorStack" />
+	
     <package name="default" namespace="/" extends="struts-default">
 
         <default-action-ref name="liste"/>
@@ -16,16 +28,19 @@
             <result name="success">/liste.jsp</result>
         </action>
         
-        <action name="edit/*" class="com.limpoto.webapps.Struts2myBlogM.actions.PostAction"
-         		method="edit">
+        <action name="edit/*" class="com.limpoto.webapps.Struts2myBlogM.actions.PostAction" method="edit">
          	<param name="postId">{1}</param>
          	<result name="success">/edit.jsp</result>
          	<result name="notfound" type="redirect">/liste</result>
         </action>
         
+        <action name="create" class="com.limpoto.webapps.Struts2myBlogM.actions.PostAction" method="create">
+         	<result name="success">/edit.jsp</result>
+         	<result name="notfound" type="redirect">/liste</result>
+        </action>
+        
         <!-- resultat input en cas d'erreur de validation -->
-        <action name="save" class="com.limpoto.webapps.Struts2myBlogM.actions.PostAction"
-         		method="save">
+        <action name="save" class="com.limpoto.webapps.Struts2myBlogM.actions.PostAction" method="save">
          	<result name="success" type="redirect">/liste</result>
          	<result name="input">/edit.jsp</result>
         </action>

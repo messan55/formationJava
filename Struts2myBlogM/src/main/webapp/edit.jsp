@@ -14,7 +14,7 @@
 <s:hidden name="postId" />
 <s:textfield name="postTitre" label="titre du post" />
 <s:textarea name="postCorps" label="corps du post" />
-<s:textfield name="postDate" label="date du post" />
+<s:label name="postDate"></s:label>
 <s:submit value="sauver"/>
 </s:form>
 </body>
