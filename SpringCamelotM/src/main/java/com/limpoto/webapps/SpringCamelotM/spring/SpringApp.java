@@ -26,6 +26,8 @@ public class SpringApp {
         IChevalier c2 = ctx.getBean("charleduham", IChevalier.class);
         c2.partirEnQuete();
         
+        IChevalier c3 = ctx.getBean("bernadot", IChevalier.class);
+        c3.partirEnQuete();
 		System.out.println("--------------------------------------");
 
 		System.out.println("done...");

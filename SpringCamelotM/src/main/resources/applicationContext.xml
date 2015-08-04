@@ -12,21 +12,34 @@
             http://www.springframework.org/schema/aop/spring-aop-4.0.xsd"
 			default-autowire="byName">
 			
+	<bean id="ecurie" class="com.limpoto.webapps.SpringCamelotM.beans.Ecurie"/>
+	<bean id="cheval1" class="com.limpoto.webapps.SpringCamelotM.beans.Cheval" factory-bean="ecurie" factory-method="fournirCheval" scope="prototype"/>
+			
 	<bean id="quete1" class="com.limpoto.webapps.SpringCamelotM.beans.ChevalierBasic>
 		<constructor-arg index="0" value="compter les pieds"/>
 	</bean>
 	<bean id="quete2" class="com.limpoto.webapps.SpringCamelotM.beans.ChevalierBasic">
-		<constructor-arg index="1" value="courir vite"/>
+		<constructor-arg index="0" value="courir vite"/>
 	</bean>
 	<bean id="quete3" class="com.limpoto.webapps.SpringCamelotM.beans.ChevalierBasic">
-		<constructor-arg index="2" value="nettoyer les ham"/>
+		<constructor-arg index="0" value="nettoyer les ham"/>
 	</bean>
+	<bean id="quete4" class="com.limpoto.webapps.SpringCamelotM.beans.ChevalierBasic">
+		<constructor-arg index="0" value="nettoyer les ham"/>
+		<constructor-arg index="1" value="0.5"/>
+	</bean>
+	
+	
 	<bean id="jacquot" class="com.limpoto.webapps.SpringCamelotM.beans.ChevalierBasic">
 		<property name="nom" value="jacquot"></property>
 		<property name="quete" value="quete1"></property>
 	</bean>
 	<bean id="charleduham" class="com.limpoto.webapps.SpringCamelotM.beans.ChevalierBasic">
 		<property name="nom" value="jacquot"></property>
+		<property name="quete" value="quete2"></property>
+	</bean>
+	<bean id="bernadot" class="com.limpoto.webapps.SpringCamelotM.beans.ChevalierBasic">
+		<property name="nom" value="bernadot"></property>
 		<property name="quete" value="quete2"></property>
 	</bean>
 	
