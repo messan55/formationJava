@@ -30,6 +30,9 @@ public class SpringApp {
         c3.partirEnQuete();
 		System.out.println("--------------------------------------");
 
+		IChevalier c4 = ctx.getBean("Caradoc", IChevalier.class);
+        c3.partirEnQuete();
+		
 		System.out.println("done...");
 	}
 

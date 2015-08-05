@@ -13,7 +13,14 @@ public class Ecurie {
 		Random rd = new Random();
 		return chevaux.get(rd.nextInt(chevaux.size()));
 	}
-	
+	public Ecurie(List<String> nomChevaux){
+		chevaux = new ArrayList<Cheval>();
+		for (String nom : nomChevaux) {
+			Cheval c = new Cheval();
+			c.setNom(nom);
+			chevaux.add(c);
+		}
+	}
 	public Ecurie(){
 		chevaux = new ArrayList<Cheval>();
 		Cheval c = new Cheval();
