@@ -40,6 +40,13 @@ public class IndexAction extends ActionSupport {
 	public String getInterventionStatuts() {return InterventionStatuts;}
 	public void setInterventionStatuts(String interventionStatuts) {InterventionStatuts = interventionStatuts;}
 	
+	
+	public Intervenant getInterventionIntervenant() {return interventionIntervenant;}
+	public void setInterventionIntervenant(Intervenant interventionIntervenant) {this.interventionIntervenant = interventionIntervenant;}
+	
+	public Materiel getInterventionMateriel() {return interventionMateriel;}
+	public void setInterventionMateriel(Materiel interventionMateriel) {this.interventionMateriel = interventionMateriel;}
+	
 	public String index() {
 		interventions = intervationDAO.findAll();
 		return SUCCESS;
@@ -52,6 +59,7 @@ public class IndexAction extends ActionSupport {
 		setInterventionDatePlanification(i.getDatePlanification());
 		setInterventionMemo(i.getMemo());
 		setInterventionStatuts(i.getStatuts());
+		
 		return SUCCESS;
 	}
 
