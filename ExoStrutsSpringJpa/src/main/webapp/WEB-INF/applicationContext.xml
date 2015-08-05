@@ -46,7 +46,7 @@
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 </bean>
 
-<bean></bean>
+<bean/>
 
 <tx:annotation-driven transaction-manager="transactionManager" />
 
