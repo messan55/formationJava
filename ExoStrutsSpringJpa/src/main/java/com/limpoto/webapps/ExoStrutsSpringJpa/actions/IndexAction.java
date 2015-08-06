@@ -28,7 +28,7 @@ public class IndexAction extends ActionSupport {
 	private int interventionIntervenantID;
 	private int interventionMaterielID;
 
-	public void setIntervationDAO(IInterventionDAO intervationDAO) {this.interventionDAO = intervationDAO;}
+	public void setInterventionDAO(IInterventionDAO interventionDAO) {this.interventionDAO = interventionDAO;}
 	public void setIntervenantDAO(IIntervenantDAO intervenantDAO) {this.intervenantDAO = intervenantDAO;}
 	public void setMaterielDAO(IMaterielDAO materielDAO) {this.materielDAO = materielDAO;}
 
