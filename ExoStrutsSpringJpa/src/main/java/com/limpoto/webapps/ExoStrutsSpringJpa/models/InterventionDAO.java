@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import com.limpoto.webapps.ExoStrutsSpringJpa.metier.Intervention;
 
 public class InterventionDAO implements IInterventionDAO {
@@ -14,17 +16,17 @@ public class InterventionDAO implements IInterventionDAO {
 		this.em = em;
 	}
 
-	@Override
+	@Transactional
 	public List<Intervention> findAll() {
-		return em.createQuery("from Message", Intervention.class).getResultList();
+		return em.createQuery("from Intervention", Intervention.class).getResultList();
 	}
 
-	@Override
+	@Transactional
 	public Intervention findByID(int id) {
 		return em.find(Intervention.class, id);
 	}
 
-	@Override
+	@Transactional
 	public Intervention save(Intervention m) {
 		if (m.getId() > 0)
 			m = em.merge(m);
@@ -33,7 +35,7 @@ public class InterventionDAO implements IInterventionDAO {
 		return m;
 	}
 
-	@Override
+	@Transactional
 	public void delete(int id) {
 		Intervention msg = em.find(Intervention.class, id);
 		if (msg != null)

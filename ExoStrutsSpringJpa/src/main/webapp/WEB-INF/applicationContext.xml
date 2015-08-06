@@ -46,7 +46,9 @@
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 </bean>
 
-<bean/>
+<bean id="interventionDAO" class="com.limpoto.webapps.ExoStrutsSpringJpa.models.InterventionDAO" />
+<bean id="intervenantDAO" class="com.limpoto.webapps.ExoStrutsSpringJpa.models.IntervenantDAO" />
+<bean id="materielDAO" class="com.limpoto.webapps.ExoStrutsSpringJpa.models.MaterielDAO" />
 
 <tx:annotation-driven transaction-manager="transactionManager" />
 

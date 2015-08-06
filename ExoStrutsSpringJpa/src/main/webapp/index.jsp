@@ -8,6 +8,16 @@
 <title>hello</title>
 </head>
 <body>
-<h2><s:property value="message" /> </h2>
+<h2>liste des interventions</h2>
+<table border="1">
+<tr><th>date</th><th>memo</th><th>status</th><th>action</th></tr>
+<s:iterator value="interventions">
+<tr>
+<td><s:property value="dateplanification"/></td>
+<td><s:property value="memo"/></td>
+<td><s:property value="statuts"/></td>
+</tr>
+</s:iterator>
+</table>
 </body>
 </html>

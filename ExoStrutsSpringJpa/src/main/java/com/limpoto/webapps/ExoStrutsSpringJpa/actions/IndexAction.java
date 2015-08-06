@@ -6,28 +6,32 @@ import java.util.List;
 import com.limpoto.webapps.ExoStrutsSpringJpa.metier.Intervenant;
 import com.limpoto.webapps.ExoStrutsSpringJpa.metier.Intervention;
 import com.limpoto.webapps.ExoStrutsSpringJpa.metier.Materiel;
+import com.limpoto.webapps.ExoStrutsSpringJpa.models.IIntervenantDAO;
 import com.limpoto.webapps.ExoStrutsSpringJpa.models.IInterventionDAO;
+import com.limpoto.webapps.ExoStrutsSpringJpa.models.IMaterielDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class IndexAction extends ActionSupport {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private IInterventionDAO intervationDAO;
+	private IInterventionDAO interventionDAO;
+	private IIntervenantDAO intervenantDAO;
+	private IMaterielDAO materielDAO;
 	private List<Intervention> interventions;
+	private List<Materiel> materiels;
+	private List<Intervenant> intervenants;
 	public int interventionId;
 	public Date interventionDatePlanification;
 	public String interventionMemo;
-	public String InterventionStatuts;
-	public Intervenant interventionIntervenant;
-	public Materiel interventionMateriel;
-	
-	public IInterventionDAO getIntervationDAO() {return intervationDAO;}
-	public void setIntervationDAO(IInterventionDAO intervationDAO) {this.intervationDAO = intervationDAO;}
-	
-	public List<Intervention> getInterventions() {return interventions;}
-	public void setInterventions(List<Intervention> interventions) {this.interventions = interventions;}
-	
+	public String interventionStatuts;
+	private int interventionIntervenantID;
+	private int interventionMaterielID;
+
+	public void setIntervationDAO(IInterventionDAO intervationDAO) {this.interventionDAO = intervationDAO;}
+	public void setIntervenantDAO(IIntervenantDAO intervenantDAO) {this.intervenantDAO = intervenantDAO;}
+	public void setMaterielDAO(IMaterielDAO materielDAO) {this.materielDAO = materielDAO;}
+
 	public int getInterventionId() {return interventionId;}
 	public void setInterventionId(int interventionId) {this.interventionId = interventionId;}
 	
@@ -37,23 +41,26 @@ public class IndexAction extends ActionSupport {
 	public String getInterventionMemo() {return interventionMemo;}
 	public void setInterventionMemo(String interventionMemo) {this.interventionMemo = interventionMemo;}
 	
-	public String getInterventionStatuts() {return InterventionStatuts;}
-	public void setInterventionStatuts(String interventionStatuts) {InterventionStatuts = interventionStatuts;}
+	public String getInterventionStatuts() {return interventionStatuts;}
+	public void setInterventionStatuts(String interventionStatuts) {this.interventionStatuts = interventionStatuts;}
 	
+	public List<Intervention> getInterventions() {return interventions;}
+	public List<Materiel> getMateriels() {return materiels;}
+	public List<Intervenant> getIntervenants() {return intervenants;}
+
 	
-	public Intervenant getInterventionIntervenant() {return interventionIntervenant;}
-	public void setInterventionIntervenant(Intervenant interventionIntervenant) {this.interventionIntervenant = interventionIntervenant;}
-	
-	public Materiel getInterventionMateriel() {return interventionMateriel;}
-	public void setInterventionMateriel(Materiel interventionMateriel) {this.interventionMateriel = interventionMateriel;}
+	public int getInterventionIntervenantID() {return interventionIntervenantID;}
+	public void setInterventionIntervenantID(int interventionIntervenantID) {this.interventionIntervenantID = interventionIntervenantID;}
+	public int getInterventionMaterielID() {return interventionMaterielID;}
+	public void setInterventionMaterielID(int interventionMaterielID) {this.interventionMaterielID = interventionMaterielID;}
 	
 	public String index() {
-		interventions = intervationDAO.findAll();
+		interventions = interventionDAO.findAll();
 		return SUCCESS;
 	}
 	
 	public String edit(){
-		Intervention i = intervationDAO.findByID(getInterventionId());
+		Intervention i = interventionDAO.findByID(getInterventionId());
 		if (i == null)
 			return "notfound";
 		setInterventionDatePlanification(i.getDatePlanification());
