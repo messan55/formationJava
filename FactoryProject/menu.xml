@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<entry cle="tarte a la fraise" valeur="dessert"></entry>
+	<entry cle="poulet roti" valeur="plat principal"></entry>
+	<entry cle="eclair chocolat" valeur="dessert"></entry>
+	<entry cle="tourte à la viande" valeur="plat principal"></entry>
+</menu>
